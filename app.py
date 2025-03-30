@@ -2,6 +2,24 @@ from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
+@app.after_request
+def add_ngrok_headers(response):
+    response.headers['ngrok-skip-browser-warning'] = 'anyvalue'
+    return response
+
+@app.route('/')
+def home():
+    return render_template('login.html')
+
+if name == 'main':
+    app.run(host='0.0.0.0', port=5000)
+
+
+
+
+
+
+
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
