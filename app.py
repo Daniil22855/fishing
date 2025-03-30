@@ -11,15 +11,6 @@ def add_ngrok_headers(response):
 def home():
     return render_template('login.html')
 
-if name == 'main':
-    app.run(host='0.0.0.0', port=5000)
-
-
-
-
-
-
-
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
